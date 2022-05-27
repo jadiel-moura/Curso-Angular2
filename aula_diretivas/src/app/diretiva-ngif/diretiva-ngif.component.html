@@ -1,0 +1,44 @@
+<h5>*ngIf</h5>
+
+<div *ngIf="cursos.length > 0">
+    Lista de cursos aqui
+</div>
+<div *ngIf="cursos.length == 0">
+    Não existe cursos para serem listados
+</div>
+
+
+<div *ngIf="mostrarCursos">
+    Lista de cursos aqui
+</div>
+<div *ngIf="!mostrarCursos">
+    Não existe cursos para serem listados
+</div>
+
+<br>
+<button (click)="onMostrarCursos()" class="btn btn-primary">Mostrar ou esconder cursos</button>
+
+<h5>hidden como alternativa</h5>
+<div [hidden]="!mostrarCursos">
+    Lista de cursos aqui
+</div>
+<div [hidden]="mostrarCursos">
+    Não existe cursos para serem listados
+</div>
+<!-- [hidden] recomendado para árvore de elementos pequenos-->
+<!-- *ngIf recomendado para árvore de elementos grandes-->
+
+
+
+<div *ngIf="mostrarCursos">
+    Lista de cursos aqui 1
+</div>
+
+<!-- Não funciona
+<template [ngIf]="mostrarCursos">
+    <div>Lista de cursos aqui 2</div>
+</template>-->
+
+<div template="ngIf mostrarCursos">
+    Lista de cursos aqui 3
+</div>
